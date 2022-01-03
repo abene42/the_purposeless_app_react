@@ -23,12 +23,19 @@ export const Logo = styled.div`
     height: 8rem;
 `;
 
+const linkButtonsCommonCss = css`
+    ${ (props) => props.isActive ? css`background-color: #2A5F83; color: #FEFEFE;` : css`color: #242424;`};
+    cursor:hand;
+    &:hover{
+      background-color: #6A98B8;
+      color: white;
+    }
+`
+
 export const HomeButton = styled(Link)`
-  ${ (props) => props.to === '/' && css`background-color: #2A5F83;`};
+    ${linkButtonsCommonCss};
     display: block;
     text-decoration: none;
-    background-color: #2a5f83;
-    color: white;
     padding: 20px 160px 20px 30px;
     font-size: 33px;
     font-weight: 500;
@@ -44,18 +51,12 @@ export const NavigationLinkTitle = styled.div`
 `;
 
 export const NavigationLink = styled(Link)`
+    ${linkButtonsCommonCss};
     display: block;
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
-    color: #242424;
     padding: 17px 0 17px 29px;
-    cursor:hand;
-    
-    &:hover{
-      background-color: rgba(42, 95, 131, 0.8);
-      color: white;
-    }
 `;
 
 export const BlurredText = styled.div`
